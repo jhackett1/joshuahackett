@@ -1,0 +1,33 @@
+@import '../vars'
+
+.skills
+    background-color: $light
+    @include paddedSection
+.skills__inner
+    @media screen and (min-width: 500px)
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: 50px
+        grid-row-gap: 50px
+    @media screen and (min-width: 800px)
+        grid-column-gap: 60px
+        grid-row-gap: 60px
+
+.skill
+    margin-bottom: 40px
+    @media screen and (min-width: 500px)
+        margin-bottom: 0px
+
+.skill__icon
+    width: 50px
+    margin-bottom: 10px
+
+.skill__headline
+    margin-bottom: 10px
+    font-size: 1.4em
+    color: $dark
+
+.skill__content
+    color: $text
+    font-size: 1em
+    line-height: 1.5em

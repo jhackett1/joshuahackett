@@ -26,11 +26,15 @@
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "dotenv": "^6.2.0",
+    "fs": "0.0.1-security",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "vague-time": "^2.4.2",
+    "xml2js": "^0.4.19",
+    "xml2js-es6-promise": "^1.1.1"
   }
 }

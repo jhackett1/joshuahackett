@@ -1,14 +1,14 @@
 @import '../vars'
 
-.work
+.blog
     @include paddedSection
 
-.work__section-title
+.blog__section-title
     @include sectionTitle
     margin-bottom: 30px
     color: $dark
 
-.work__grid
+.blog__grid
     margin-bottom: 30px
     @media screen and (min-width: 500px)
         display: grid
@@ -19,7 +19,7 @@
         grid-column-gap: 30px
         grid-row-gap: 30px
 
-.work-card
+.blog-card
     display: inline-block
     overflow: hidden
     border: 1px solid $mid
@@ -29,21 +29,36 @@
     text-decoration: none
     color: inherit
     transition: 0.2s ease-out
+    position: relative
     &:hover
         transform: scale(0.985)
     @media screen and (min-width: 500px)
         margin-bottom: 0px
 
-.work-card__image
-    width: 100%
+.blog-card__article
+    padding: 20px 20px 40px 20px
 
-.work-card__article
-    padding: 20px
-
-.work-card__field
+.blog-card__published
     color: $text
     margin-bottom: 10px
+    &:first-letter
+        text-transform: capitalize
 
-.work-card__name
+.blog-card__title
     color: $dark
     font-size: 1.4em
+    margin-bottom: 20px
+
+.blog-card__excerpt
+    margin-bottom: 20px
+    color: $text
+
+.blog-card__cta
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-size: 0.9em
+    font-weight: 700
+    color: $brand
+    position: absolute
+    bottom: 20px
+    left: 20px
