@@ -1,4 +1,42 @@
 @import '../vars'
     
 .hero
-    color: $brand
+    height: 100vh
+    box-shadow: inset 0px 7px 0px $brand
+
+.hero__inner
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+
+.hero__logo
+    margin-bottom: 50px
+    max-width: 50px
+
+.hero__headline
+    font-weight: normal
+    margin-bottom: 50px
+    @include sectionTitle
+    @media screen and (min-width: 700px)
+        max-width: 66.67%
+
+
+// Menu
+.menu__list
+    list-style: none
+    padding: 0
+
+.menu__item
+    display: inline-block
+    margin-right: 30px
+    font-size: 1.2em
+    @media screen and (min-width: 700px)
+        margin-right: 50px
+        font-size: 1.4em
+
+.menu__link
+    color: $text
+    text-decoration: none
+    &:hover
+        text-decoration: underline

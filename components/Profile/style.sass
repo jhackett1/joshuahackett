@@ -1,0 +1,57 @@
+@import '../vars'
+
+.profile
+    background-color: $light
+    @include paddedSection
+    position: relative
+    overflow: hidden
+
+.profile__inner
+    @media screen and (min-width: 700px)
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+
+.profile__portrait
+    width: 240px
+    height: 240px
+    object-fit: cover
+    border-radius: 100%
+    @media screen and (min-width: 700px)
+        width: 300px
+        height: 300px
+        margin-right: -60px
+
+.profile__introduction
+    font-size: 1.1em
+    line-height: 1.8em
+    color: $dark
+    position: relative
+    @media screen and (min-width: 700px)
+        font-size: 1.3em
+        // transform: translateX(-100px)
+
+.drop-cap
+    font-size: 2.5em
+    color: $dark
+    font-weight: bold
+    position: relative
+    z-index: 3
+    float: left
+    transform: translateY(-26px)
+    margin-right: 10px
+    &:after
+        content: ""
+        display: inline-block
+        position: absolute
+        bottom: -15px
+        left: 0
+        right: 0
+        width: 100%
+        height: 7px
+        background: $brand
+        z-index: -1
+
+.shade
+    background-color: transparentize($brand, 0.9)

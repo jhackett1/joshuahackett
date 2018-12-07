@@ -1,0 +1,26 @@
+@import '../vars'
+
+.button
+    display: inline-block
+    text-transform: uppercase
+    letter-spacing: 2px
+    text-decoration: none
+    padding: 15px 25px
+    font-size: 0.9em
+    font-weight: 700
+    border-radius: 5px
+    transition: 0.2s ease-out
+    &:hover
+        transform: scale(0.975)
+
+.button--outline
+    border: 2px solid $brand
+    color: $brand
+    &:hover
+        color: transparentize($brand, 0.1)
+
+.button--solid
+    background: $brand
+    color: white
+    &:hover
+        color: transparentize(white, 0.1)

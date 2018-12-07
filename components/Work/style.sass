@@ -1,0 +1,49 @@
+@import '../vars'
+
+.work
+    @include paddedSection
+
+.work__section-title
+    @include sectionTitle
+    margin-bottom: 30px
+    color: $dark
+
+.work__grid
+    margin-bottom: 30px
+    @media screen and (min-width: 500px)
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: 20px
+        grid-row-gap: 20px
+    @media screen and (min-width: 800px)
+        grid-column-gap: 30px
+        grid-row-gap: 30px
+
+.work-card
+    display: inline-block
+    overflow: hidden
+    border: 1px solid $mid
+    border-radius: 10px
+    max-width: 100%
+    margin-bottom: 20px
+    text-decoration: none
+    color: inherit
+    transition: 0.2s ease-out
+    &:hover
+        transform: scale(0.975)
+    @media screen and (min-width: 500px)
+        margin-bottom: 0px
+
+.work-card__image
+    width: 100%
+
+.work-card__article
+    padding: 20px
+
+.work-card__field
+    color: $text
+    margin-bottom: 7px
+
+.work-card__name
+    color: $dark
+    font-size: 1.4em
