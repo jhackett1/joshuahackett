@@ -16,7 +16,6 @@ export default ({
             </div>
             <Button
                 href="https://www.behance.net/jhackett1"
-           
                 blank
                 label="See more work"
                 />

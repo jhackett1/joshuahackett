@@ -32,6 +32,7 @@
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-scroll": "^1.7.10",
     "request": "^2.88.0",
     "vague-time": "^2.4.2",
     "xml2js": "^0.4.19",

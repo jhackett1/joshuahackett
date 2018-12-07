@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import xml2js from 'xml2js-es6-promise';
+import { Element as ScrollElement } from 'react-scroll'
 
 import Head from 'next/head'
 import Hero from '../components/Hero'
@@ -13,7 +14,6 @@ import Footer from '../components/Footer'
 import './main.sass'
 
 export default class extends React.Component{
-
     static async getInitialProps(){
         // Get Behance posts via API
         const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
@@ -42,14 +42,21 @@ export default class extends React.Component{
                 </Head>
                 <Hero/>
                 <Profile/>
-                <Work
-                    behancePosts={this.props.behancePosts}
-                    />
+                <ScrollElement name="work">
+                    <Work
+                        behancePosts={this.props.behancePosts}
+                        />
+                </ScrollElement>
                 <Skills/>
-                <Blog
-                    mediumPosts={this.props.mediumPosts}
-                    />
-                <Contact/>
+                <ScrollElement name="blog">
+                    <Blog
+                        mediumPosts={this.props.mediumPosts}
+                        />
+                </ScrollElement>
+
+                <ScrollElement name="contact">
+                    <Contact/>
+                </ScrollElement>
                 <Footer/>
             </>
         )

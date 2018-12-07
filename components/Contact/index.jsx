@@ -8,15 +8,14 @@ export default () =>
         <h2 className="contact__section-title">Contact me</h2>
         <p className="contact__content">I’m available for freelance experience design and sometimes development work. If you’ve got something that’s a good fit, get in touch.</p>
         <Button
-                href="mailto:hello@joshuahackett.com"
-                label="Email me"
-                />
+            href="mailto:hello@joshuahackett.com"
+            label="Email me"
+            />
         <Button
             href="/static/cv.pdf"
             blank
             outline
             label="Download CV"
             />
-
         </div>
     </section>
