@@ -1,8 +1,9 @@
 import vagueTime from 'vague-time'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default ({
     post
-}) => 
+}) =>  
     <a href={post.link[0]} target="blank" className="blog-card">
         <article className="blog-card__article">
             <p className="blog-card__published">{vagueTime.get({to: new Date(post.pubDate[0])})}</p>
@@ -11,3 +12,4 @@ export default ({
             <span className="blog-card__cta">Keep reading →</span>
         </article>
     </a>
+

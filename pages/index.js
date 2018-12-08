@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import xml2js from 'xml2js-es6-promise';
+import xml2js from 'xml2js-es6-promise'
 import { Element as ScrollElement } from 'react-scroll'
 
 import Head from 'next/head'
@@ -11,6 +11,7 @@ import Blog from '../components/Blog'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 
+import 'animate.css/animate.min.css'
 import './main.sass'
 
 export default class extends React.Component{
@@ -37,7 +38,10 @@ export default class extends React.Component{
             <>
                 <Head>
                     <title>Joshua Hackett</title>
+                    <meta name="Description" content="An experience designer and developer based in London, experienced with public sector and charity clients."/>
                     <meta name="viewport" content="width=device-width"/>
+                    <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon"/>
+                    <link rel="icon" href="/static/favicon.png" type="image/x-icon"/>
                     <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet"/>
                 </Head>
                 <Hero/>

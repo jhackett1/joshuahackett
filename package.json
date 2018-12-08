@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "start": "next start",
     "build": "next build",
-    "start": "next start"
+    "export": "next export"
   },
   "repository": {
     "type": "git",
@@ -24,18 +25,18 @@
   "author": "Joshua Hackett",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "animate.css": "^3.7.0",
     "dotenv": "^6.2.0",
-    "fs": "0.0.1-security",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^7.0.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.6.3",
     "react-scroll": "^1.7.10",
-    "request": "^2.88.0",
     "vague-time": "^2.4.2",
-    "xml2js": "^0.4.19",
     "xml2js-es6-promise": "^1.1.1"
   }
 }
