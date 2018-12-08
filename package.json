@@ -7,7 +7,7 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
-    "export": "next export"
+    "export": "npm run build && next export"
   },
   "repository": {
     "type": "git",
