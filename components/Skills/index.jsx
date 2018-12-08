@@ -23,7 +23,7 @@ export default () =>
             <Skill
                 icon="/static/skill2.svg"
                 headline="Agile delivery"
-                content="I work incrementally, delivering the most useful things first and often, rather than waiting until the end of the project. I continuously incorporate user and stakeholder feedback, reducing risk."
+                content="I work incrementally, delivering the most valuble things early and often, rather than waiting until the end of the project. This lets me continuously incorporate user and stakeholder feedback, reducing risk."
                 />
         </div>
     </section>
