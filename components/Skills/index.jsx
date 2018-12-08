@@ -18,7 +18,7 @@ export default () =>
             <Skill
                 icon="/static/skill4.svg"
                 headline="Facilitator"
-                content="I’ve helped students, apprentices, civil servants and volunteers gain new digital skills through workshops, courses and coaching, and I’m comfortable running sessions with stakeholders."
+                content="I’ve helped students, apprentices, civil servants and volunteers gain new digital skills through workshops, courses and coaching, and I’m comfortable running co-design sessions with stakeholders."
                 />
             <Skill
                 icon="/static/skill2.svg"
