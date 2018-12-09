@@ -19,7 +19,7 @@ exports.handler = (event, context) => {
 
         return {
           statusCode: 200,
-          body: behancePosts
+          body: parsed
         }
     })
   }).on('error', function(err) {
