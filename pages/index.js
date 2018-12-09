@@ -17,17 +17,26 @@ import './main.sass'
 
 export default class extends React.Component{
     static async getInitialProps(){
-        // Get Medium posts
-        const postsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-posts`)
-        let postsPosts = await postsRes.json()
-        // Get Behance posts
-        const projectsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-projects`)
-        let projectsPosts = await projectsRes.json()
-        // Return only the required number of posts
-        return {
-            behancePosts: projectsPosts.slice(0, 4),
-            mediumPosts: postsPosts.slice(0, 2)
+        try{
+            // Get Medium posts
+            const postsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-posts`)
+            let postsPosts = await postsRes.json()
+            // Get Behance posts
+            const projectsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-projects`)
+            let projectsPosts = await projectsRes.json()
+            // Return only the required number of posts
+            return {
+                behancePosts: projectsPosts.slice(0, 4),
+                mediumPosts: postsPosts.slice(0, 2)
+            }
+        } catch(e){
+            console.log(e)
+            return {
+                behancePosts: [],
+                mediumPosts: []
+            }
         }
+
     }
 
     render(){
