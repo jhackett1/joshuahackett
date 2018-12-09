@@ -22,28 +22,12 @@ exports.handler = (event, context) => {
           body: behancePosts
         }
     })
-}).on('error', function(err) {
-    console.error('Error with the request:', err.message);
-    return {
-      statusCode: 500,
-      body: err
-    }
-})
-
-
-
-
-
-
-
-
-
-  http.get(behanceEndpoint, (res) => {
-    res.on('end', () => {
+  }).on('error', function(err) {
+      console.error('Error with the request:', err.message);
       return {
-        statusCode: 200,
-        body: behancePosts
+        statusCode: 500,
+        body: err
       }
-    })
   })
+
 }
