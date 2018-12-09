@@ -1,6 +1,7 @@
-import fetch from 'isomorphic-unfetch'
-import xml2js from 'xml2js-es6-promise'
 import { Element as ScrollElement } from 'react-scroll'
+import Link from 'next/link'
+import xml2js from 'xml2js-es6-promise'
+import fetch from 'isomorphic-unfetch'
 
 import Head from 'next/head'
 import Hero from '../components/Hero'
@@ -16,11 +17,12 @@ import './main.sass'
 
 export default class extends React.Component{
     static async getInitialProps(){
-        // Get Behance posts via API
+        // Server only
+        // Get Behance posts
         const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
         const behanceRes = await fetch(behanceEndpoint)
-        const behancePosts = await behanceRes.json()
-        // Get Medium posts via RSS
+        let behancePosts = await behanceRes.json()
+        // Get Medium posts
         const mediumFeed = `https://medium.com/feed/@dinosaurlord`
         const mediumRes = await fetch(mediumFeed)
         const mediumXML = await mediumRes.text()
@@ -34,6 +36,11 @@ export default class extends React.Component{
     }
 
     render(){
+
+        console.log(this.props.behancePosts)
+
+
+
         return(
             <>
                 <Head>
@@ -44,6 +51,7 @@ export default class extends React.Component{
                     <link rel="icon" href="/static/favicon.png" type="image/x-icon"/>
                     <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet"/>
                 </Head>
+                <Link href="/derp"><a>Go derp</a></Link>
                 <Hero/>
                 <Profile/>
                 <ScrollElement name="work">
