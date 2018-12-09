@@ -1,14 +1,49 @@
-const https = require("https")
+const http = require("http")
 
 const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
 
-exports.handler = async (event, context) => {
-  https.get(behanceEndpoint, (res) => {
+exports.handler = (event, context) => {
+  http.get(behanceEndpoint, function(res) {
+    res.setEncoding('utf8');
+    var body = '';
+    res.on('data', function(d) {
+        body += d;
+    });
+    res.on('end', function() {
+        try {
+            var parsed = JSON.parse(body);
+        } catch (err) {
+            console.error('Unable to parse response as JSON', err);
+            return cb(err);
+        }
+
+        return {
+          statusCode: 200,
+          body: behancePosts
+        }
+    })
+}).on('error', function(err) {
+    console.error('Error with the request:', err.message);
+    return {
+      statusCode: 500,
+      body: err
+    }
+})
+
+
+
+
+
+
+
+
+
+  http.get(behanceEndpoint, (res) => {
     res.on('end', () => {
       return {
         statusCode: 200,
         body: behancePosts
       }
-    });
+    })
   })
 }
