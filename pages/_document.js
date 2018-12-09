@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
     const script = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-91311733-1');`
 
     return (
-      <html>
+      <html lang="en">
         <body>
             <Head/>
             <Main />
