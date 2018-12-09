@@ -1,31 +1,13 @@
 import fetch from "node-fetch"
-import convert from 'xml-to-json-promise'
+import xml2js from 'xml2js-es6-promise'
 
-const mediumFeed = `https://medium.com/feed/@dinosaurlord`
-
-exports.handler = async (event, context) => {
-
-        const response = await fetch(mediumFeed)
-        const text = await response.text()
-        convert.xmlDataToJSON(text)
-            .then(fuck => {
-                return {
-                    statusCode: 200,
-                    body: fuck
-                }
-            })
-            .catch(err => { 
-                return{
-                    statusCode: 400,
-                    body: err
-                }
-            })
-
-
-};
-
-
-
-// const mediumXML = await mediumRes.text()
-// let mediumPosts = await xml2js(mediumXML)
-// mediumPosts = mediumPosts.rss.channel[0].item
+exports.handler = async (event, context, callback) => {
+    const mediumFeed = `https://medium.com/feed/@dinosaurlord`
+    const response = await fetch(mediumFeed)
+    const xml = await response.text()
+    const data = await xml2js(xml)
+    return  {
+      statusCode: 200,
+      body: JSON.stringify(data.rss.channel[0].item)
+    }
+}

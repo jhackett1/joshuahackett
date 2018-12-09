@@ -1,13 +1,11 @@
-import fetch from "node-fetch";
+import fetch from "node-fetch"
 
-const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
-
-exports.handler = async (event, context) => {
-  return fetch(behanceEndpoint)
-    .then(response => response.json())
-    .then(data => ({
+exports.handler = async (event, context, callback) => {
+    const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=duRQQ11ImdOq0V5yHw2IMKrM12XL1QD2`
+    const response = await fetch(behanceEndpoint)
+    const data = await response.json()
+    return  {
       statusCode: 200,
-      body: data
-    }))
-    .catch(error => ({ statusCode: 422, body: String(error) }));
-};
+      body: JSON.stringify(data.projects)
+    }
+}

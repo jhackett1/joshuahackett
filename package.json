@@ -30,7 +30,6 @@
     "animate.css": "^3.7.0",
     "dotenv": "^6.2.0",
     "isomorphic-unfetch": "^3.0.0",
-    "netlify-lambda": "^1.1.0",
     "next": "^7.0.2",
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
@@ -40,5 +39,8 @@
     "vague-time": "^2.4.2",
     "xml-to-json-promise": "0.0.3",
     "xml2js-es6-promise": "^1.1.1"
+  },
+  "devDependencies": {
+    "netlify-lambda": "^1.1.0"
   }
 }

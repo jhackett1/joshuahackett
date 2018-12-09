@@ -17,21 +17,16 @@ import './main.sass'
 
 export default class extends React.Component{
     static async getInitialProps(){
-        // Server only
-        // Get Behance posts
-        const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
-        const behanceRes = await fetch(behanceEndpoint)
-        let behancePosts = await behanceRes.json()
         // Get Medium posts
-        const mediumFeed = `https://medium.com/feed/@dinosaurlord`
-        const mediumRes = await fetch(mediumFeed)
-        const mediumXML = await mediumRes.text()
-        let mediumPosts = await xml2js(mediumXML)
-        mediumPosts = mediumPosts.rss.channel[0].item
+        const postsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-posts`)
+        let postsPosts = await postsRes.json()
+        // Get Behance posts
+        const projectsRes = await fetch(`https://joshuahackett.com/.netlify/functions/get-projects`)
+        let projectsPosts = await projectsRes.json()
         // Return only the required number of posts
         return {
-            behancePosts: behancePosts.projects.slice(0, 4),
-            mediumPosts: mediumPosts.slice(0, 2)
+            behancePosts: projectsPosts.slice(0, 4),
+            mediumPosts: postsPosts.slice(0, 2)
         }
     }
 
@@ -51,7 +46,7 @@ export default class extends React.Component{
                     <link rel="icon" href="/static/favicon.png" type="image/x-icon"/>
                     <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet"/>
                 </Head>
-                <Link href="/derp"><a>Go derp</a></Link>
+                <Link href="/derp"><a>Go to 2nd page</a></Link>
                 <Hero/>
                 <Profile/>
                 <ScrollElement name="work">
