@@ -25,6 +25,7 @@
   "author": "Joshua Hackett",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "animate.css": "^3.7.0",
