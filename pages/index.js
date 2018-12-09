@@ -1,3 +1,4 @@
+import "@babel/polyfill"
 import { Element as ScrollElement } from 'react-scroll'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
