@@ -1,9 +1,9 @@
-const http = require("http")
+const https = require("https")
 
 const behanceEndpoint = `https://www.behance.net/v2/users/jhackett1/projects?api_key=${process.env.BEHANCE_API_KEY}`
 
 exports.handler = (event, context) => {
-  http.get(behanceEndpoint, function(res) {
+  https.get(behanceEndpoint, function(res) {
     res.setEncoding('utf8');
     var body = '';
     res.on('data', function(d) {
