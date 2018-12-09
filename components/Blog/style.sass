@@ -10,17 +10,18 @@
 
 .blog__grid
     margin-bottom: 30px
-    @media screen and (min-width: 500px)
-        display: grid
-        grid-template-columns: 1fr 1fr
-        grid-column-gap: 20px
-        grid-row-gap: 20px
-    @media screen and (min-width: 800px)
-        grid-column-gap: 30px
-        grid-row-gap: 30px
-    @media screen and (min-width: 1400px)
-        grid-column-gap: 40px
-        grid-row-gap: 40px
+    @supports (display: grid)
+        @media screen and (min-width: 500px)
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-column-gap: 20px
+            grid-row-gap: 20px
+        @media screen and (min-width: 800px)
+            grid-column-gap: 30px
+            grid-row-gap: 30px
+        @media screen and (min-width: 1400px)
+            grid-column-gap: 40px
+            grid-row-gap: 40px
 
 .blog-card
     display: inline-block
@@ -28,6 +29,7 @@
     border: 1px solid $mid
     border-radius: 10px
     max-width: 100%
+    width: 100%
     margin-bottom: 20px
     text-decoration: none
     color: inherit
@@ -36,8 +38,9 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1)
     &:hover
         transform: scale(0.985)
-    @media screen and (min-width: 500px)
-        margin-bottom: 0px
+    @supports (display: grid)
+        @media screen and (min-width: 500px)
+            margin-bottom: 0px
 
 .blog-card__article
     padding: 20px 20px 40px 20px

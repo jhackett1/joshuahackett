@@ -3,20 +3,23 @@
 .skills
     background-color: $light
     @include paddedSection
+    
 .skills__inner
-    @media screen and (min-width: 500px)
-        display: grid
-        grid-template-columns: 1fr 1fr
-        grid-column-gap: 50px
-        grid-row-gap: 50px
-    @media screen and (min-width: 800px)
-        grid-column-gap: 60px
-        grid-row-gap: 60px
+    @supports (display: grid)
+        @media screen and (min-width: 500px)
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-column-gap: 50px
+            grid-row-gap: 50px
+        @media screen and (min-width: 800px)
+            grid-column-gap: 60px
+            grid-row-gap: 60px
 
 .skill
     margin-bottom: 40px
-    @media screen and (min-width: 500px)
-        margin-bottom: 0px
+    @supports (display: grid)
+        @media screen and (min-width: 500px)
+            margin-bottom: 0px
 
 .skill__icon
     width: 50px
