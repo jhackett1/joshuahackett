@@ -7,6 +7,6 @@ export default ({
     label,
     href
 }) =>
-    <ScrollAnimation animateIn="pulse" animateOnce={true} initiallyVisible={true} duration={0.5} className="button-container">
+    <div className="button-container">
         <a target={(blank)? "blank" : ""} className={(outline)? "button button--outline" : "button button--solid"} href={href}>{label}</a>
-    </ScrollAnimation>
+    </div>
