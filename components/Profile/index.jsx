@@ -1,5 +1,3 @@
-
-import ScrollAnimation from 'react-animate-on-scroll';
 import './style.sass'
 
 export default () =>
